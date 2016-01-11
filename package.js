@@ -1,10 +1,10 @@
 Package.describe({
   name: 'polguixe:meteor-ge-interface-designer',
-  version: '0.0.1',
+  version: '4.4.3',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'Meteor wrapper for FIWARE GE Interface Designer',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  //git: 'https://github.com/PolGuixe/meteor-ge-interface-designer',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
@@ -12,13 +12,18 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
-  api.use('ecmascript');
-  api.addFiles('meteor-ge-interface-designer.js');
-});
 
-Package.onTest(function(api) {
-  api.use('ecmascript');
-  api.use('tinytest');
-  api.use('polguixe:meteor-ge-interface-designer');
-  api.addFiles('meteor-ge-interface-designer-tests.js');
+//Dependencies
+api.use('polguixe:meteor-xml3d');
+api.use('polguixe:meteor-ge-2dui');
+api.use('pfafman:filesaver@0.2.0');
+api.addFiles([
+  // "dependencies/xml3d.tools.js",
+  "dependencies/jquery-ui.js",
+  "dependencies/jquery.fancytree-all.min.js",
+  "dependencies/jquery.ui-contextmenu.min.js"
+],'client');
+
+//Main Library
+  api.addFiles('lib/InterfaceDesigner-main.js','client');
 });
