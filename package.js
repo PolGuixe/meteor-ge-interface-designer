@@ -14,8 +14,8 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
 
 //Dependencies
-api.use('polguixe:meteor-xml3d');
-api.use('polguixe:meteor-ge-2dui');
+api.use('polguixe:meteor-xml3d@5.0.3');
+api.use('polguixe:meteor-ge-2dui@4.0.0');
 api.use('pfafman:filesaver@0.2.0');
 api.addFiles([
   // "dependencies/xml3d.tools.js",
